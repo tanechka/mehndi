@@ -1,8 +1,8 @@
 {
   "name": "node-api",
-  "main": "server.js",
+  "main": "start.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node --use_strict start.js"
   },
   "dependencies": {
     "bluebird": "^3.3.1",
