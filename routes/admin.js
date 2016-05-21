@@ -37,9 +37,8 @@ var portfolioModel = mongoose.model("Model1", portfolio, "portfolio");
      }else{
         portfolioModel.find({}, function (err, data) {
           if (err) throw err;
-          portfolio = data;
+            response.render('admin', { portfolio: data.reverse() });
         });
-        response.render('admin', { portfolio: portfolio.reverse() });
      }
   });
 

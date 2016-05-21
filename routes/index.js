@@ -23,17 +23,14 @@ var portfolio = new Schema({
   price: String
 });
 
-var portfolioVer;
 var getPortfolioModel = mongoose.model("Model2", portfolio, "portfolio");
 
 router.route('/')
   .get(function (request, response) {
       getPortfolioModel.find({}, function (err, data) {
         if (err) throw err;
-        portfolioVer = data.reverse();
+          response.render('index', { portfolioList: data.reverse() });
       });
-      console.log(portfolioVer)
-      response.render('index', { portfolioList: portfolioVer.reverse() });
 });
 
 module.exports = router;

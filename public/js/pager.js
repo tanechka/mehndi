@@ -21,16 +21,19 @@ function Pager(tableName, pagerSection, itemsPerPage) {
 
 
   Pager.prototype.showPage = function(pageNumber) {
-   if (! this.inited) {
-    alert("not inited");
+   if (! this.inited || this.pages === 0) {
     return;
    }
       var oldPageAnchor = document.getElementById('pg'+ this.currentPage);
-      oldPageAnchor.className = 'pg-normal';
+      if (oldPageAnchor) {
+        oldPageAnchor.className = 'pg-normal';
+      }
 
       this.currentPage = pageNumber;
       var newPageAnchor = document.getElementById('pg' + this.currentPage);
-      newPageAnchor.className = 'pg-selected';
+      if (newPageAnchor) {
+        newPageAnchor.className = 'pg-selected';
+      }
 
       var from = (pageNumber - 1) * this.itemsPerPage + 1;
       var to = from + this.itemsPerPage - 1;
