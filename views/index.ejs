@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+	<link rel='stylesheet' href='css/font-awesome.min.css'>
+	<link rel='stylesheet' href='css/normalize.css'>
+	<link rel='stylesheet' href='css/main.css'>
+	<title>mehndi</title>
+</head>
+
+<body class='profile' ng-app='myApp'>
+
+<!-- header -->
+	<header class="active">
+		<section class='container row'>
+			<div class='logo'>
+				<a  onclick='return false;' href='javascript:void(0)'>mehndi</a>
+			</div>
+			<nav class='menu'>
+				<ul class='row'>
+					<li><a href="#navhome">Home</a></li>
+					<li><a href="#navportfolio">Portfolio</a></li>
+					<li><a href="#navabout">About Us</a></li>
+					<li><a href="#navteams">Teams</a></li>
+					<li><a href="#navprice">Price</a></li>
+					<li><a href="#navcontact">Contact Us</a></li>
+				</ul>
+			</nav>
+		</section>
+	</header>
+
+<!-- image-home -->
+	<section class='' id='navhome' >
+		<div id="large-header" class="large-header" style="height: 402px;">
+			<canvas id="demo-canvas" width="1435" height="402"></canvas>
+			<section  class='container row home-description'>
+				<div class="wrap">
+					<h1>Mehndi</h1>
+					<div>
+						If you've ever been to an Indian, Moroccan, or Pakistani wedding ceremony,
+						you've probably seen — or worn — mehndi. Many brides, both abroad and in the United States,
+						wear these henna "tattoos" on their hands and feet for wedding celebrations;
+						look closely and you might spot their loved one's name worked into the design.
+					</div>
+					<a  href="#navcontact" type="button" class="btn">Contact Us</a>
+					<a  href="#navabout" type="button" class="btn btn-primary">About Us</a>
+				</div>
+			</section>
+		</div>
+	</section>
+	<!-- portfolio -->
+<section class='portfolio' id="navportfolio">
+	<h2 class="title">Portfolio</h2>
+	<p class="tagline">
+		 Take a look at our Recent Work
+	</p>
+	<div class="text-center container">
+		<ul  id="portfolio-filter" class="portfolio-filter-list row">
+			<li><a onclick="filter.setFilter('all')" id='all'>all</a></li>
+			<li><a onclick="filter.setFilter('hand')" id='hand'>on the hand</a></li>
+			<li><a onclick="filter.setFilter('foot')" id='foot'>on the foot</a></li>
+			<li><a onclick="filter.setFilter('back')" id='back'>on the back</a></li>
+			<li><a onclick="filter.setFilter('neck')" id='neck'>on the neck</a></li>
+			<li><a onclick="filter.setFilter('stomach')" id='stomach'>on the tummy</a></li>
+		</ul>
+	</div>
+	<div id="portfolio-items" class="portfolio-items row wrap">
+	<% portfolioList.forEach(function (data){ %>
+		<article class="<%= data.category%>">
+			<a href="">
+				<img src="<%= data.path%>" alt="">
+				<div class="overlay">
+					<h3><%= data.name %></h3>
+					<span><%= data.size%>:<%= data.price%></span>
+					<span><%= data.category%></span>
+				</div>
+			</a>
+		</article>
+	<% }); %>
+</div>
+<div id="pageNavPosition"></div>
+<div id="portfolio-filter" class="text-center container">
+	<ul class="portfolio-filter-list pager row" id="portfolio-filter-nav">
+	</ul>
+</div>
+</section>
+
+<!-- about -->
+<section id='navabout' class="split about">
+	<div class="container row">
+		<div>
+				<div id="ymaps-map-id_30327617" style="width: auto; height: 445px;"></div>
+				<script type="text/javascript">function fid_30327617(ymaps) {var objects = [];var events = {};try{}catch(e){alert(e);};var map; objects["map1"] = map = new ymaps.Map("ymaps-map-id_30327617", {center: [53.85337965952141,27.516685801489515], zoom: 17,type: "yandex#map",behaviors:['scrollZoom','drag','dblClickZoom']});map.controls.add("typeSelector",{"top":5,"right":2.5}).add("zoomControl",{"top":172.5,"left":2.5});map.geoObjects.add(objects['Point4'] = new ymaps.Placemark([53.853141785341585,27.516015249234968], {"iconContent":"mehndi","xname":"Point4","metaType":"Point"},{"preset":"twirl#blueStretchyIcon","visible":true,"iconImageHref":"https://api-maps.yandex.ru/2.0.42/release/../images/2c3d90d4e522c1f62b6cf3e59f7a877d.png","iconImageSize":[37,42],"iconImageOffset":[-10,-40],"iconContentLayout":"twirl#geoObjectIconContent","balloonContentBodyLayout":"twirl#geoObjectBalloonBodyContent","hintContentLayout":"twirl#geoObjectHintContent"}));};</script><script type="text/javascript" src="http://api-maps.yandex.ru/2.0-stable/?load=package.full&lang=ru-RU&onload=fid_30327617"></script>
+		</div>
+		<div class="about-container">
+			<h2 class="title">Little about us</h2>
+			<p class="lead">
+				 "Mehndi is the art of painting the body in ornate designs with henna.
+				 Associated with transformation and transcendence, it is a beautiful and mysterious art form
+				 that has been used for centuries to heal, to adorn and to bless."
+			</p>
+			<h2 class="title">picture size</h2>
+			<ul class="checklist">
+				<li>XS - extra small</li>
+				<li>S - small</li>
+				<li>M - medium</li>
+				<li>L - large</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<!-- teams -->
+<section class="teams" id="navteams">
+	<div class="container">
+	<h2 class="title">Team</h2>
+	<p class="tagline">
+		 Crazy people all around, huh?
+	</p>
+	<div class="row team-wrap">
+			<div class="team-boxes">
+				<div class="team-thumb">
+					<img src="http://themepush.com/demo/cayman/assets/img/demo/t1.jpg" alt="">
+				</div>
+				<div class="team-info">
+					<h2>Kathleen Walsh</h2>
+					<p>
+						 Logistic Stuff
+					</p>
+				</div>
+				<hr class="separator">
+				<div class="team-social">
+					<a href=""><i class="fa fa-facebook-square"></i></a>
+					<a href=""><i class="fa fa-twitter"></i></a>
+					<a href=""><i class="fa fa-google-plus"></i></a>
+					<a href=""><i class="fa fa-linkedin"></i></a>
+					<a href=""><i class="fa fa-envelope"></i></a>
+				</div>
+			</div>
+			<div class="team-boxes">
+				<div class="team-thumb overlay-image view-overlay">
+					<img src="http://themepush.com/demo/cayman/assets/img/demo/t2.jpg" alt="">
+				</div>
+				<div class="team-info">
+					<h2>Georgia Mccormick</h2>
+					<p>
+						 Photographer
+					</p>
+				</div>
+				<hr class="separator">
+				<div class="team-social">
+					<a href=""><i class="fa fa-facebook-square"></i></a>
+					<a href=""><i class="fa fa-twitter"></i></a>
+					<a href=""><i class="fa fa-google-plus"></i></a>
+					<a href=""><i class="fa fa-linkedin"></i></a>
+					<a href=""><i class="fa fa-envelope"></i></a>
+				</div>
+			</div>
+			<div class="team-boxes">
+				<div class="team-thumb">
+					<img src="http://themepush.com/demo/cayman/assets/img/demo/t3.jpg" alt="">
+				</div>
+				<div class="team-info">
+					<h2>Marjorie Watson</h2>
+					<p>
+						 Marketing
+					</p>
+				</div>
+				<hr class="separator">
+				<div class="team-social">
+					<a href=""><i class="fa fa-facebook-square"></i></a>
+					<a href=""><i class="fa fa-twitter"></i></a>
+					<a href=""><i class="fa fa-google-plus"></i></a>
+					<a href=""><i class="fa fa-linkedin"></i></a>
+					<a href=""><i class="fa fa-envelope"></i></a>
+				</div>
+		</div>
+	</div>
+</div>
+</section>
+
+	<!-- price -->
+<section class='price parallax-content' id='navprice'>
+	<div class="container">
+			<div class="row">
+				<div class="box-price">
+					<div class="icon">
+						ES
+					</div>
+					<h2 class="counter">30 тыс.</h2>
+				</div>
+				<div class="box-price">
+					<div class="icon">
+					  S
+					</div>
+					<h2 class="counter">40 тыс.</h2>
+				</div>
+				<div class="box-price">
+					<div class="icon">
+						M
+					</div>
+					<h2 class="counter">60 тыс.</h2>
+				</div>
+				<div class="box-price">
+					<div class="icon">
+						L
+					</div>
+					<h2 class="counter">80 тыс.</h2>
+				</div>
+			</div>
+	</div>
+</section>
+
+
+<footer id='navcontact'>
+		<div class="container">
+			<div class="footer">
+					<ul class="social-icons row">
+						<li><a href="#."><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#."><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#."><i class="fa fa-google-plus"></i></a></li>
+						<li><a href="#."><i class="fa fa-dribbble"></i></a></li>
+						<li><a href="#."><i class="fa fa-pinterest"></i></a></li>
+					</ul>
+				<a onclick="return false;" href="javascript:void(0)">mehndi</a>
+				<p class="copyright">
+				  phone number: +375 (25) 5000 877
+				</p>
+			</div>
+		</div>
+</footer>
+  <script src='js/pager.js'></script>
+  <script src='js/main.js'></script>
+	<script src="js/animheader.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>mehndi</title>
+<link rel='stylesheet' href='css/normalize.css'>
+<link rel='stylesheet' href='css/main.css'>
+</head>
+<body>
+
+<section class='form-login'>
+  <div id="large-header" class="large-header" style="height: 402px;">
+    <canvas id="demo-canvas" width="1435" height="402"></canvas>
+    <div class="form-log-in">
+      <h3>Log in:</h3>
+      <% if (typeof message!== 'undefined') { %>
+        <span>
+          <%= message %>
+        </span>
+      <% } %>
+      <form method="post" action="login">
+        <div class="item-box">
+          <label>user: </label>
+          <input type="input" name="user"/>
+        </div>
+        <div class="item-box">
+          <label>password: </label>
+          <input type="password"  name="password"/>
+        </div>
+        <div class="item-box-btn">
+          <input type="submit" class="btn btn-primary"/>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+	<script src="js/animheader.js"></script>
+</body>
+</html>

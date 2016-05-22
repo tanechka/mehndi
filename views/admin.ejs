@@ -1,0 +1,147 @@
+<html>
+<head>
+<title>mehndi</title>
+  <link rel='stylesheet' href='css/normalize.css'>
+  <link rel='stylesheet' href='css/font-awesome.min.css'>
+  <link rel='stylesheet' href='css/main.css'>
+</head>
+<body>
+<section id='wrapper'>
+  <section class="nav-section">
+    <nav>
+      <ul>
+        <li class="active">
+          <a>Portfolio</a>
+        </li>
+      </ul>
+    </nav>
+  </section>
+  <section  class="form-section">
+    <div class="panel">
+      <ul>
+        <li>
+          <form method="post" action="admin">
+            <input name='logout' value="logout"  class="hide">
+            <button type="submit" class="logout">
+              <i class="fa fa-sign-out"></i> Log out
+            </button>
+          </form>
+
+        </li>
+        <li class="logo-admin">
+          <a>
+            Admin
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="page-heading">
+        <div>
+            <h2>Admin portfolio</h2>
+        </div>
+    </div>
+    <div class="container-box">
+      <section class="fr-cr">
+        <div class="ibox-title">
+          <h5>Create a new item</h5>
+        </div>
+        <form method="post" id="admin" name="create" class="form-create">
+          <div class="form-group">
+            <label>name:</label>
+            <input name="name" value='mehndi' class="form-control"/>
+          </div>
+          <div class="form-group">
+            <label>category:</label>
+            <select name="category"  class="form-control">
+              <option>on the hand</option>
+              <option>on the foot</option>
+              <option>on the back</option>
+              <option>on the neck</option>
+              <option>on the stomach</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>path:</label>
+            <input name="path" value="images/"  class="form-control"/>
+          </div>
+          <div class="form-group">
+            <label>size:</label>
+            <select name="size"   class="form-control">
+              <option>xs</option>
+              <option>s</option>
+              <option>m</option>
+              <option>l</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>price:</label>
+            <input name="price" value='30000'  class="form-control"/>
+          </div>
+          <button type='submit' class="btn-form">Create</button>
+        </form>
+      </section>
+      <div>
+        <div class="ibox-title">
+          <h5>Delete item</h5>
+        </div>
+
+        <table class="table footable">
+          <thead>
+          <tr>
+           <th>name</th>
+           <th>category</th>
+           <th>path</th>
+           <th>size</th>
+           <th>price</th>
+           <th class="t-r">action</th>
+          </tr>
+        </thead>
+
+        <tbody id="item-container">
+          <% portfolio.forEach(function (data){ %>
+
+            <tr>
+              <form method="post" id='form' class="form-delete">
+              <td>
+                <input value="<%= data._id %>"  name='id' class="hide">
+                <%= data.name %>
+              </td>
+              <td>
+                <%= data.category %>
+              </td>
+              <td>
+                <%= data.path %>
+              </td>
+              <td>
+                <%= data.size %>
+              </td>
+              <td>
+                <%= data.price %>
+              </td>
+              <td>
+                <button type='submit' class="btn-form">Remove</button>
+              </td>
+                </form>
+            </tr>
+          <% }); %>
+
+        </tbody>
+        <tfoot>
+          <tr>
+              <td colspan="6">
+                <ul class="portfolio-filter-list pager row" id="portfolio-filter-nav">
+                </ul>
+              </td>
+          </tr>
+        </tfoot>
+        </table>
+
+        </div>
+      </div>
+  </section>
+
+</section>
+<script src='js/pager.js'></script>
+<script src='js/admin.js'></script>
+</body>
+</html>
